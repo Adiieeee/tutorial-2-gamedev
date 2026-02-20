@@ -5,12 +5,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgtht"]
 size = Vector2(96, 75)
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=780099969]
+[node name="GreenShip" type="RigidBody2D" unique_id=1606085769]
 
 [node name="PlayerShip1Green" type="Sprite2D" parent="." unique_id=52890976]
 position = Vector2(0.5, 0.5)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_tfqwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=822890655]
 position = Vector2(-0.5, 0)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_xgtht")

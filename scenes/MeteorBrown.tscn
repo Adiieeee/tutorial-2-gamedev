@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b7kpuoyt18rcw"]
+
+[ext_resource type="Texture2D" uid="uid://cq5yn6ecuv8qf" path="res://assets/meteorBrown_big1.png" id="1_umdv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vc5gc"]
+size = Vector2(104, 24)
+
+[node name="MeteorBrown" type="AnimatableBody2D" unique_id=2015347685]
+
+[node name="MeteorBrownBig1" type="Sprite2D" parent="." unique_id=1670926295]
+position = Vector2(-9.536743e-07, -2.3841858e-07)
+scale = Vector2(1.0495049, 0.29166663)
+texture = ExtResource("1_umdv4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=378027652]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_vc5gc")

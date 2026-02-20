@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://ccq0amndpnrh4"]
+
+[ext_resource type="PackedScene" uid="uid://2l8dbfsh07v1" path="res://scenes/GreenShip.tscn" id="1_l6gr7"]
+[ext_resource type="Script" uid="uid://diwanul8ki13t" path="res://scenes/green_ship.gd" id="2_4p0dt"]
+[ext_resource type="PackedScene" uid="uid://vnc7wr3ue48l" path="res://scenes/FiveSnowPlatform.tscn" id="2_sp0w3"]
+[ext_resource type="PackedScene" uid="uid://bxhdff4j8th82" path="res://scenes/VerticalSnowPlatform.tscn" id="3_qe5b6"]
+[ext_resource type="PackedScene" uid="uid://b7kpuoyt18rcw" path="res://scenes/MeteorBrown.tscn" id="4_sp0w3"]
+[ext_resource type="Script" uid="uid://cwxj1np3qwb4v" path="res://scenes/meteor_brown.gd" id="5_qe5b6"]
+[ext_resource type="Script" uid="uid://32xcje5cccex" path="res://scenes/objective_area.gd" id="7_xpq2v"]
+[ext_resource type="Texture2D" uid="uid://blaixu8q3tfra" path="res://assets/SingleFlag.png" id="8_0jmjk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qe5b6"]
+rough = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4p0dt"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8268"]
+size = Vector2(36.75, 41)
+
+[sub_resource type="FontVariation" id="FontVariation_xpq2v"]
+
+[node name="Level2" type="Node" unique_id=1702928346]
+
+[node name="GreenShip" parent="." unique_id=780099969 groups=["Tembok"] instance=ExtResource("1_l6gr7")]
+position = Vector2(157, 141)
+rotation = 1.5707964
+collision_mask = 3
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_qe5b6")
+can_sleep = false
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("2_4p0dt")
+
+[node name="Platform" type="Node2D" parent="." unique_id=438425630]
+position = Vector2(35, 366)
+
+[node name="FiveSnowPlatform" parent="Platform" unique_id=1944885502 groups=["Tembok"] instance=ExtResource("2_sp0w3")]
+position = Vector2(-7, -330)
+collision_layer = 2
+
+[node name="FiveSnowPlatform2" parent="Platform" unique_id=2032714310 groups=["Tembok"] instance=ExtResource("2_sp0w3")]
+position = Vector2(-9, -55)
+collision_layer = 2
+
+[node name="VerticalSnowPlatform" parent="Platform" unique_id=805171903 groups=["Tembok"] instance=ExtResource("3_qe5b6")]
+position = Vector2(-8, -332)
+collision_layer = 2
+
+[node name="FiveSnowPlatform3" parent="Platform" unique_id=1880380411 groups=["Tembok"] instance=ExtResource("2_sp0w3")]
+position = Vector2(276, -330)
+collision_layer = 2
+
+[node name="VerticalSnowPlatform2" parent="Platform" unique_id=1261113841 groups=["Tembok"] instance=ExtResource("3_qe5b6")]
+position = Vector2(557, -331)
+collision_layer = 2
+
+[node name="VerticalSnowPlatform3" parent="Platform" unique_id=2011816961 groups=["Tembok"] instance=ExtResource("3_qe5b6")]
+position = Vector2(269, -56)
+collision_layer = 2
+
+[node name="FiveSnowPlatform4" parent="Platform" unique_id=1853080755 groups=["Tembok"] instance=ExtResource("2_sp0w3")]
+position = Vector2(269, 220)
+collision_layer = 2
+
+[node name="FiveSnowPlatform5" parent="Platform" unique_id=1183812784 groups=["Tembok"] instance=ExtResource("2_sp0w3")]
+position = Vector2(550, 220)
+collision_layer = 2
+
+[node name="VerticalSnowPlatform4" parent="Platform" unique_id=1850616878 groups=["Tembok"] instance=ExtResource("3_qe5b6")]
+position = Vector2(831, -56)
+collision_layer = 2
+
+[node name="VerticalSnowPlatform5" parent="Platform" unique_id=1294698910 groups=["Tembok"] instance=ExtResource("3_qe5b6")]
+position = Vector2(830, -331)
+collision_layer = 2
+
+[node name="FiveSnowPlatform6" parent="Platform" unique_id=2006520603 groups=["Tembok"] instance=ExtResource("2_sp0w3")]
+position = Vector2(556, -331)
+collision_layer = 2
+
+[node name="MeteorBrown" parent="." unique_id=654536780 instance=ExtResource("4_sp0w3")]
+position = Vector2(155, 175)
+rotation = -3.1415925
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_4p0dt")
+script = ExtResource("5_qe5b6")
+speed = 300.0
+
+[node name="ObjectiveArea" type="Area2D" parent="." unique_id=265506987]
+script = ExtResource("7_xpq2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea" unique_id=302460348]
+position = Vector2(735.625, 116.5)
+shape = SubResource("RectangleShape2D_v8268")
+
+[node name="SingleFlag" type="Sprite2D" parent="ObjectiveArea" unique_id=359467386]
+position = Vector2(736, 116)
+scale = Vector2(0.6516383, 0.6516383)
+texture = ExtResource("8_0jmjk")
+
+[node name="VictoryUI" type="CanvasLayer" parent="." unique_id=1472717591]
+visible = false
+
+[node name="Label" type="Label" parent="VictoryUI" unique_id=2112775287]
+offset_left = 136.0
+offset_top = 176.0
+offset_right = 1020.0
+offset_bottom = 449.0
+theme_override_fonts/font = SubResource("FontVariation_xpq2v")
+theme_override_font_sizes/font_size = 200
+text = "VICTORY!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="GreenShip" to="GreenShip" method="_on_body_entered"]
+[connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_body_entered"]
