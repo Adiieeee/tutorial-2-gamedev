@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ccq0amndpnrh4"]
+
+[ext_resource type="PackedScene" uid="uid://2l8dbfsh07v1" path="res://scenes/GreenShip.tscn" id="1_jm1iu"]
+[ext_resource type="PackedScene" uid="uid://vnc7wr3ue48l" path="res://scenes/static_body_2d.tscn" id="2_pbc48"]
+
+[node name="Level 2" type="Node" unique_id=1702928346]
+
+[node name="RigidBody2D" parent="." unique_id=780099969 instance=ExtResource("1_jm1iu")]
+position = Vector2(161, 187)
+rotation = 1.5707964
+gravity_scale = 0.0
+
+[node name="Platform" type="Node2D" parent="." unique_id=438425630]
+position = Vector2(35, 366)
+
+[node name="StaticBody2D11" parent="Platform" unique_id=1944885502 instance=ExtResource("2_pbc48")]
+position = Vector2(421, -75)
+
+[node name="StaticBody2D" parent="Platform" unique_id=115846690 instance=ExtResource("2_pbc48")]
+position = Vector2(109, -286)
+
+[node name="StaticBody2D2" parent="Platform" unique_id=193800199 instance=ExtResource("2_pbc48")]
+position = Vector2(103, -30)
+
+[node name="StaticBody2D3" parent="Platform" unique_id=94912049 instance=ExtResource("2_pbc48")]
+position = Vector2(10, -100)
+
+[node name="StaticBody2D4" parent="Platform" unique_id=366547337 instance=ExtResource("2_pbc48")]
+position = Vector2(17, -200)
+
+[node name="StaticBody2D5" parent="Platform" unique_id=1058259571 instance=ExtResource("2_pbc48")]
+position = Vector2(206, -285)
+
+[node name="StaticBody2D6" parent="Platform" unique_id=1125098458 instance=ExtResource("2_pbc48")]
+position = Vector2(196, -37)
+
+[node name="StaticBody2D7" parent="Platform" unique_id=1813266862 instance=ExtResource("2_pbc48")]
+position = Vector2(195, 72)
+
+[node name="StaticBody2D8" parent="Platform" unique_id=1483025005 instance=ExtResource("2_pbc48")]
+position = Vector2(312, -289)
+
+[node name="StaticBody2D9" parent="Platform" unique_id=1062697197 instance=ExtResource("2_pbc48")]
+position = Vector2(415, -289)
+
+[node name="StaticBody2D10" parent="Platform" unique_id=199065206 instance=ExtResource("2_pbc48")]
+position = Vector2(426, -183)
+
+[node name="StaticBody2D12" parent="Platform" unique_id=2126954773 instance=ExtResource("2_pbc48")]
+position = Vector2(431, 39)
